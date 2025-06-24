@@ -1,107 +1,168 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MiniMercado</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-      .produto img {
-      width: 300px;
-      height: 300px;
-      max-width: 300px;
-      max-height: 300px;
-      } 
-    </style>
-</head>
-<body>
     
-<!-- Header -->
-  <header>
-    <h1 class="titulo">MiniMercado Bom Preço</h1>
-    <nav>
-      <ul>
-        <li><a href="#frutas">Frutas e Verduras</a></li>
-        <li><a href="#alimentos">Alimentos Não Perecíveis</a></li>
-        <li><a href="#higiene">Higiene e Limpeza</a></li>
-        <li><a href="services.html">Serviços</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Swiper.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    
+    <!-- Estilos Personalizados -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light">
 
-  <main>
-    <!-- Frutas Verduras -->
-    <section id="frutas">
-      <h2 class="titulo">Frutas e Verduras</h2>
+    <!-- Header com Navbar do Bootstrap -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+            <div class="container">
+                <a class="navbar-brand fw-bold text-primary" href="index.html">MiniMercado</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#ofertas">Ofertas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#produtos">Produtos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="form.html">Cadastro e Agendamento</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contato">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-      <article class="produto">
-        <img src="imagens/banana.jpg" alt="Bananas">
-        <h3>Banana Prata</h3>
-        <p>Banana por kg.</p>
-        <p>R$ 3,99</p>
-      </article>
+    <main class="container" style="margin-top: 80px;">
 
-      <article class="produto">
-        <img src="imagens/alface.jpg" alt="Alface">
-        <h3>Alface Crespa</h3>
-        <p>Alface orgânica unidade.</p>
-        <p>R$ 2,50</p>
-      </article>
-    </section>
+        <!-- Seção do Carrossel de Ofertas -->
+        <section id="ofertas" class="my-5">
+            <h2 class="section-title">Ofertas da Semana</h2>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="https://content.paodeacucar.com/wp-content/uploads/2020/01/frutas-e-verduras-de-janeiro-capa.jpg" alt="Banner de promoção de frutas e verduras.">
+                        <div class="bannerTexto">Frutas e Verduras</div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://static.significados.com.br/foto/alimentos-nao-pereciveis-og.jpg" alt="Banner de promoção de carnes.">
+                        <div class="bannerTexto">Não Perecíveis</div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://www.cuidadodacasa.com.br/content/dam/cp-sites/home-care/tu-hogar/pt_br/truques-e-dicas-de-limpeza/casa/aprenda-a-limpar-a-sua-casa-em-7-passos/aprenda-a-limpar-a-sua-casa-em-7-passos-artigo-br-desktop.jpg" alt="Banner de promoção de produtos de limpeza.">
+                        <div class="bannerTexto">Limpeza e Higiene</div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </section>
 
-    <!-- Não Perecíveis -->
-    <section id="alimentos">
-      <h2 class="titulo">Produtos Alimentícios Não Perecíveis</h2>
+        <!-- Seção de Produtos -->
+        <section id="produtos" class="my-5">
+            <h2 class="section-title">Nossos Produtos</h2>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+                 <!-- Card de Produto: Banana -->
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <img src="imagens/banana.jpg" class="card-img-top" alt="Cacho de bananas prata frescas.">
+                        <div class="card-body">
+                            <h5 class="card-title">Banana Prata</h5>
+                            <p class="card-text">Banana fresca e de qualidade, por kg.</p>
+                            <p class="card-text fs-4 fw-bold text-primary">R$ 3,99</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card de Produto: Alface -->
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <img src="imagens/alface.jpg" class="card-img-top" alt="Alface crespa, orgânica e fresca.">
+                        <div class="card-body">
+                            <h5 class="card-title">Alface Crespa</h5>
+                            <p class="card-text">Alface orgânica, por unidade.</p>
+                            <p class="card-text fs-4 fw-bold text-primary">R$ 2,50</p>
+                        </div>
+                    </div>
+                </div>
+                
+                 <!-- Card de Produto: Arroz -->
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <img src="imagens/arroz.jpg" class="card-img-top" alt="Tigela com arroz branco cozido.">
+                        <div class="card-body">
+                            <h5 class="card-title">Arroz Branco 5kg</h5>
+                            <p class="card-text">Pacote de arroz agulhinha tipo 1.</p>
+                            <p class="card-text fs-4 fw-bold text-primary">R$ 25,00</p>
+                        </div>
+                    </div>
+                </div>
 
-      <article class="produto">
-        <img src="imagens/arroz.jpg" alt="Arroz">
-        <h3>Arroz Branco 5kg</h3>
-        <p>Pacote de arroz tipo 1.</p>
-        <p>R$ 25,00</p>
-      </article>
+                <!-- Card de Produto: Feijão -->
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <img src="imagens/feijao.jpg" class="card-img-top" alt="Tigela com feijão cozido.">
+                        <div class="card-body">
+                            <h5 class="card-title">Feijão Carioca 1kg</h5>
+                            <p class="card-text">Feijão selecionado tipo 1.</p>
+                            <p class="card-text fs-4 fw-bold text-primary">R$ 8,50</p>
+                        </div>
+                    </div>
+                </div>
 
-      <article class="produto">
-        <img src="imagens/feijao.jpg" alt="Feijão">
-        <h3>Feijão Carioca 1kg</h3>
-        <p>Feijão selecionado tipo 1.</p>
-        <p>R$ 8,50</p>
-      </article>
-    </section>
+                <!-- Card de Produto: Sabonete -->
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <img src="imagens/sabonete.jpg" class="card-img-top" alt="Sabonete Neutro na caixa.">
+                        <div class="card-body">
+                            <h5 class="card-title">Sabonete Neutro</h5>
+                            <p class="card-text">Sabonete suave para todos os tipos de pele.</p>
+                            <p class="card-text fs-4 fw-bold text-primary">R$ 2,50</p>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- Higiene Limpeza -->
-    <section id="higiene">
-      <h2 class="titulo">Produtos de Higiene e Limpeza</h2>
-
-      <article class="produto">
-        <img src="imagens/sabonete.jpg" alt="Sabonete">
-        <h3>Sabonete Neutro</h3>
-        <p>Sabonete vegano de lavanda.</p>
-        <p>R$ 2,00</p>
-      </article>
-
-      <article class="produto">
-        <img src="imagens/detergente.jpg" alt="Detergente">
-        <h3>Detergente Líquido 500ml</h3>
-        <p>Ideal para louças.</p>
-        <p>R$ 2,50</p>
-      </article>
-    </section>
-
+                <!-- Card de Produto: Detergente -->
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <img src="imagens/detergente.jpg" class="card-img-top" alt="Sabonete Neutro na caixa.">
+                        <div class="card-body">
+                            <h5 class="card-title">Detergente Neutro</h5>
+                            <p class="card-text">Ideal para limpeza de louças e utensílios.</p>
+                            <p class="card-text fs-4 fw-bold text-primary">R$ 1,80</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
-  <footer id="contato">
-    <p>&copy; 2025 MiniMercado. Todos os direitos reservados.</p>
-    <p>Contato: contato@MiniMercado.com.br | (11) 1234-5678</p>
-    <nav>
-      <ul>
-        <li><a href="#frutas">Frutas</a></li>
-        <li><a href="#alimentos">Alimentos</a></li>
-        <li><a href="#higiene">Higiene</a></li>
-        <li><a href="#servicos">Serviços</a></li>
-      </ul>
-    </nav>
-  </footer>
+    <footer id="contato" class="bg-dark text-white text-center p-4">
+        <div class="container">
+            <p class="mb-1">Email: contato@minimercado.com.br | Telefone: (11) 1234-5678</p>
+            <p class="mb-0">&copy; 2025 MiniMercado. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Swiper.js JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     
+    <!-- Scripts Personalizados -->
+    <script src="script.js"></script>
+
 </body>
 </html>
