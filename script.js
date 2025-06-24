@@ -1,9 +1,6 @@
-// Este script espera que o DOM esteja totalmente carregado para executar o código.
 document.addEventListener('DOMContentLoaded', function () {
     
-    // =================================================================
     // INICIALIZAÇÃO DO CARROSSEL (APENAS NA PÁGINA PRINCIPAL)
-    // =================================================================
 const swiper = new Swiper('.swiper', {
     loop: true,
     pagination: {
@@ -20,22 +17,20 @@ const swiper = new Swiper('.swiper', {
     },
   });
 
-    // =================================================================
     // LÓGICA DO FORMULÁRIO DE CADASTRO (APENAS NA PÁGINA DE CADASTRO)
-    // =================================================================
     const cadastroForm = document.getElementById('cadastroForm');
     if (cadastroForm) {
         
-        // Inicialização do Calendário (Flatpickr)
+        // Inicialização do Flatpickr
         flatpickr("#dataHora", {
             enableTime: true,
             dateFormat: "d/m/Y H:i",
             minDate: "today",
-            locale: "pt", // Usar a tradução para português
+            locale: "pt", 
             time_24hr: true
         });
 
-        // Lógica para mostrar/ocultar campo de endereço
+
         const radioEntrega = document.getElementById('servicoEntrega');
         const radioRetirada = document.getElementById('servicoRetirada');
         const campoEndereco = document.getElementById('campo-endereco');
@@ -53,7 +48,7 @@ const swiper = new Swiper('.swiper', {
         radioEntrega.addEventListener('change', toggleEndereco);
         radioRetirada.addEventListener('change', toggleEndereco);
 
-        // Máscara simples para CPF (apenas formatação visual)
+        // Máscara string para CPF
         const inputCpf = document.getElementById('cpf');
         inputCpf.addEventListener('input', function(e) {
             let value = e.target.value.replace(/\D/g, '');
@@ -63,13 +58,13 @@ const swiper = new Swiper('.swiper', {
             e.target.value = value;
         });
         
-        // Lógica para submissão do formulário e exibição do modal
+        // Lógica para submissão do formulário
         const modal = new bootstrap.Modal(document.getElementById('confirmacaoModal'));
         cadastroForm.addEventListener('submit', function(e) {
             e.preventDefault(); // Impede o envio real do formulário
-            modal.show(); // Mostra o modal de confirmação
-            cadastroForm.reset(); // Limpa o formulário
-            toggleEndereco(); // Garante que o campo de endereço seja ocultado se necessário
+            modal.show();
+            cadastroForm.reset(); 
+            toggleEndereco(); 
         });
     }
 });
